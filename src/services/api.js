@@ -8,7 +8,7 @@ function saveMockDB(db) { localStorage.setItem('mock_notes_app_db', JSON.stringi
 function generateToken() { return 'mock_' + Math.random().toString(36).substr(2, 16); }
 
 const mockHandlers = {
-  'POST /auth/signup': async (body) => {
+  'POST /auth/signup': async (headers, query, body) => {
     const db = getMockDB();
     const { name, email, phone, password } = body;
     if (db.users.find(u => u.email === email)) throw { status: 400, message: 'Email already exists' };
@@ -20,7 +20,7 @@ const mockHandlers = {
     saveMockDB(db);
     return { token, user: { id: newUser.id, name, email, phone } };
   },
-  'POST /auth/login': async (body) => {
+  'POST /auth/login': async (headers, query, body) => {
     const db = getMockDB();
     const { email, password } = body;
     const user = db.users.find(u => u.email === email && u.password === password);
@@ -64,7 +64,7 @@ const mockHandlers = {
     if (!note) throw { status: 404, message: 'Note not found' };
     return { note };
   },
-  'POST /notes': async (headers, body) => {
+  'POST /notes': async (headers, query, body) => {
     const token = headers.Authorization?.replace('Bearer ', '');
     if (!token) throw { status: 401 };
     const db = getMockDB();
