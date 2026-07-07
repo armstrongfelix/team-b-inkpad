@@ -1,0 +1,28 @@
+Creating a GitHub Account
+Sign Up: Visit github.com and enter a username, email, and password.
+
+Verify: Complete the human-verification puzzle.
+
+Select Plan: Choose the free, personal account (default).
+
+Confirm: Click the link sent to your email to activate the account.
+
+Core Concepts
+Repository: A version-controlled data structure storing source code, a README (project description), and a License (usage terms).
+
+Visibility: Repositories can be Public (searchable by anyone) or Private (restricted access).
+
+Organization: A collection of user accounts that owns repositories, managed by designated owners.
+
+Repository Tabs
+Code: The central location where all source files reside.
+
+Issues: A tool to track and plan open items against the project.
+
+Pull Requests: A collaboration mechanism to review committed changes before merging them into the main branch.
+
+Projects: Core tools for managing, sorting, and planning tasks.
+
+Wiki, Security, and Insights: Advanced features providing a communication base for the external user community.
+
+Settings: Controls for repository personalization (e.g., renaming) and access management.
